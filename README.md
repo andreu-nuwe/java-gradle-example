@@ -9,7 +9,7 @@
   </div>
 </div>
 
-Template example use, solving the [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/):
+Template example use, solving the [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) Leetcode problem:
 
 ```
 Write a function to find the longest common prefix string amongst an array of strings.
