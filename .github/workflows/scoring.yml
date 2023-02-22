@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sonarqube:
+    environment: SCORING
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      PROJECT_ID: ${{ github.event.repository.name }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run the tests and SonarQube Scan 🚨
+        run:  ./gradlew test jacocoTestReport sonarqube
