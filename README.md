@@ -9,6 +9,14 @@
   </div>
 </div>
 
+Template example use, solving the [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/):
+
+```
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+```
+
 Template to build a challenge using Java and Gradle. It will be graded when doing a push to the main branch.
 
 ## Technology
